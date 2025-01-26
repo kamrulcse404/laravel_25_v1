@@ -19,6 +19,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $name = "Md. Kamrul Hasan";
+        $company = "Workspace Infotech Ltd";
+
+        // Share both name and company with all views
+        view()->share([
+            'name' => $name,
+            'company' => $company,
+        ]);
     }
 }

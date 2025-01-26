@@ -14,6 +14,8 @@
 
 @section('content')
     This is the main content of my website.
+    <h1>{{ $name }}</h1>
+    <h2>{{ $company }}</h2>
 @endsection
 
 @push('blog_styles')
@@ -23,8 +25,8 @@
 @push('blog_js')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            alert("Page has loaded successfully!");
-        });
+        // $(document).ready(function() {
+        //     alert("Page has loaded successfully!");
+        // });
     </script>
 @endpush
