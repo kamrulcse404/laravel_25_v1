@@ -44,5 +44,14 @@ class AppServiceProvider extends ServiceProvider
             return "<?php echo (new DateTime('@' . $expression))->format('m/d/Y H:i'); ?>";
         });
 
+        Blade::if('admin', function ($value) {
+            return $value === 'admin';
+        });
+
+        Blade::if('editor', function ($value) {
+            return $value === 'editor';
+        });
+
+
     }
 }

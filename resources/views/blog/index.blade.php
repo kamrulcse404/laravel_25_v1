@@ -19,6 +19,15 @@
 
     @datetime(1737892814)
 
+    @admin('admin')
+        <h1>Hello Md. Kamrul Hasan</h1>
+    @endadmin
+
+    @editor('editor')
+        <h1>Hello Farjana</h1>
+    @endeditor
+
+
 @endsection
 
 @push('blog_styles')
