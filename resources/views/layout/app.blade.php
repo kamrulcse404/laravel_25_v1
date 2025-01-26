@@ -7,29 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Welcome')</title>
 
+    <link rel="stylesheet" href="style.css">
 
-    @section('styles')
-        <link rel="stylesheet" href="style.css">
-    @show
-
+    @stack('blog_styles')
 </head>
 
 <body>
 
-
     <h1>Hello World</h1>
-
     <hr>
 
     @yield('nav')
-
     <hr>
 
     @yield('sidebar')
-
     <hr>
 
     @yield('content')
+
+    @stack('blog_js')
 
 </body>
 

@@ -12,13 +12,19 @@
     This is sidebar
 @endsection
 
-
 @section('content')
-    This is main content of my web side.
+    This is the main content of my website.
 @endsection
 
-
-@section('styles')
-    @parent
+@push('blog_styles')
     <link rel="stylesheet" href="style1.css">
-@endsection
+@endpush
+
+@push('blog_js')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            alert("Page has loaded successfully!");
+        });
+    </script>
+@endpush
