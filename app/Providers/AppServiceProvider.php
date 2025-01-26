@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,5 +28,13 @@ class AppServiceProvider extends ServiceProvider
             'name' => $name,
             'company' => $company,
         ]);
+
+
+        View::composer('blog.test', function ($view) {
+            $testComposer = "Test Composer";
+
+            $view->with('testComposer', $testComposer);
+        });
+
     }
 }
