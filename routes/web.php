@@ -82,3 +82,9 @@ Route::get('/users', function () {
 
     return $users;
 });
+
+
+
+Route::get('/blogs', function () {
+    return view('blog.index');
+});
