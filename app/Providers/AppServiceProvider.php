@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Views\Composers\TestComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -30,11 +31,12 @@ class AppServiceProvider extends ServiceProvider
         ]);
 
 
-        View::composer('blog.test', function ($view) {
-            $testComposer = "Test Composer";
+        // View::composer('blog.test', function ($view) {
+        //     $testComposer = "Test Composer";
 
-            $view->with('testComposer', $testComposer);
-        });
+        //     $view->with('testComposer', $testComposer);
+        // });
 
+        View::composer('blog.test', TestComposer::class);
     }
 }
