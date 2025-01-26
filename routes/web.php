@@ -49,7 +49,35 @@ Route::get('/users', function () {
     // $users = DB::table('users')->where('country', 'Canada')->get();
 
     // DB::table('users')->where('country', 'Kenya')->delete();
-    $users = DB::table('users')->get();
+    // $users = DB::table('users')->get();
+
+    // $users = DB::table('users')->limit(5)->get();
+    // $users = DB::table('users')->limit(5)->get()->count();
+    // $users = DB::table('users')->count();
+
+
+
+    // join
+    // ------------------------------------------------------------------------------------------
+
+    // $users = DB::table('users')->join('posts', 'users.id', 'posts.user_id')->get();
+
+    // $users = DB::table('users')
+    // ->select('users.id', 'users.name', 'users.email', 'posts.title', 'posts.body')
+    // ->join('posts', 'users.id', '=', 'posts.user_id')
+    // ->get();
+
+    // $users = DB::table('users')
+    // ->select('users.id', 'users.name', 'users.email', 'posts.title', 'posts.body')
+    // ->join('posts', 'users.id', 'posts.user_id')
+    // ->get();
+
+    // left join
+    // $users = DB::table('users')->leftJoin('posts', 'users.id', '=', 'posts.user_id')->get();
+    // $users = DB::table('users')->leftJoin('posts', 'users.id', 'posts.user_id')->get();
+
+    // right join
+    $users = DB::table('users')->rightJoin('posts', 'users.id', 'posts.user_id')->get();
 
 
     return $users;
