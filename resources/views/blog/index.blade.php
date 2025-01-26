@@ -16,6 +16,9 @@
     This is the main content of my website.
     <h1>{{ $name }}</h1>
     <h2>{{ $company }}</h2>
+
+    @datetime(1737892814)
+
 @endsection
 
 @push('blog_styles')

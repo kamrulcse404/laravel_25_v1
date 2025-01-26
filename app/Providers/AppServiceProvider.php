@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Views\Composers\TestComposer;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -38,5 +39,10 @@ class AppServiceProvider extends ServiceProvider
         // });
 
         View::composer('blog.test', TestComposer::class);
+
+        Blade::directive('datetime', function ($expression) {
+            return "<?php echo (new DateTime('@' . $expression))->format('m/d/Y H:i'); ?>";
+        });
+
     }
 }
